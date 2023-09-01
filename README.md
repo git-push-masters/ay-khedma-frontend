@@ -27,7 +27,24 @@ react-app-skeleton/
   │   ├── index.html
   │   └── favicon.ico
   ├── src/
+  |   ├──pages
+  |   |  ├── home/ 
+  |   |  |    ├── Home.jsx
+  |   |  |    └──home.scss
+  |   |  ├── register/
+  |   |  |    ├── Register.jsx
+  |   |  |    └──resgister.scss
+  |   |  ├── login/
+  |   |  |    ├── Login.jsx
+  |   |  |    └──login.scss
+  |   |  └── map /
+  |   |       ├── Map.jsx
+  |   |       └──map.scss
+  |   |  
   │   ├── components/ 
+  |   |     ├── Input/
+  |   |     |    ├── Navbar.jsx
+  |   |     |    └──navbar.scss
   │   │   └──Navbar/
   |   |      ├── Navbar.jsx
   |   |      └──navbar.scss
