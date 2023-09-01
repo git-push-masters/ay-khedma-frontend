@@ -1,4 +1,4 @@
-#over view in client-side =>
+# over view in client-side =>
 
 Before you begin, ensure that you have the following installed on your development machine:
 
@@ -9,7 +9,7 @@ Before you begin, ensure that you have the following installed on your developme
 
 To use this ReactJS application skeleton, follow these steps:
 
-1. Clone this repository to your local machine using `git clone https://github.com/your-username/react-app-skeleton.git`.
+1. Clone this repository to your local machine using `git clone https://github.com/ay-khedma-frontend/react-app-skeleton.git`.
 
 2. Navigate to the project directory: `cd react-app-skeleton`.
 
