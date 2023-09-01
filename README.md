@@ -45,9 +45,16 @@ react-app-skeleton/
   |   |     ├── Input/
   |   |     |    ├── Navbar.jsx
   |   |     |    └──navbar.scss
-  │   │   └──Navbar/
-  |   |      ├── Navbar.jsx
-  |   |      └──navbar.scss
+  │   │     └──Navbar/
+  |   |        ├── Navbar.jsx
+  |   |        └──navbar.scss
+  |   ├──rtk/
+  |   |  ├──slices/
+  |   |  |   └──userSlice.js
+  |   |  ├──store/
+  |   |  |  └──store.js
+  |   |  └──apiCalls.js
+  |   |
   │   ├── styles/
   │   │   ├── Responsive.scss
   │   │   ├── varibles.scss
