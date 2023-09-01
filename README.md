@@ -68,7 +68,7 @@ You can then deploy the contents of the `build` directory to your hosting platfo
 
 If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the GitHub repository.
 
-## License
+## License.
 
 This ReactJS application skeleton is open source and released under the [MIT License ↗](https://opensource.org/licenses/MIT). You are free to use, modify, and distribute it as per the terms of the license.
 
