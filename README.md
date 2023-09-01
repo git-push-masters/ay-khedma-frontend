@@ -21,7 +21,7 @@ To use this ReactJS application skeleton, follow these steps:
 
 The directory structure of this ReactJS application skeleton is as follows:
 
-
+```
 react-app-skeleton/
   ├── public/
   │   ├── index.html
@@ -58,6 +58,7 @@ react-app-skeleton/
   ├── package.json
   ├── README.md
   └── yarn.lock
+```
   
  - the pakges is (Scss , material ui core /icons , styled-components, react-router-dom,redux-persist,react-redux,axios,reduxjs/toolkit,.....)
 
