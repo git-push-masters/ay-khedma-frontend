@@ -50,6 +50,8 @@ const SmsCode = () => {
     // } catch (e) {
     //   console.log(e);
     // }
+    // }
+
     register(dispatch, user);
   };
 
