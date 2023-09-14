@@ -1,0 +1,53 @@
+@import "../../../styles/varible.scss";
+.userRegisterInfo {
+  height: 100%;
+  .selection,
+  .idPhoto {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    label {
+      color: #111;
+      font-size: 14px;
+      align-self: start;
+      font-weight: 400;
+    }
+    select {
+      width: 100%;
+      align-self: start;
+      height: 49px;
+      padding: 5px 20px;
+      margin-top: 10px;
+      border-radius: 13px;
+      border: 1px solid #d9d9d9;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .idPhoto {
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+  }
+  .button-userRegisterInfo {
+    display: flex;
+    width: 100%;
+    height: 49px;
+    padding: 17px 100px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 10px;
+    border-radius: 13px;
+    background: $LightColor;
+    margin-top: 15px;
+    color: $whiteColor;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}

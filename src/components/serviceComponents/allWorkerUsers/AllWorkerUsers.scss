@@ -1,0 +1,37 @@
+@import "../../../styles/varible.scss";
+.allWorkerUsers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 309px;
+  height: fit-content;
+  border-radius: 73px;
+  background-color: $main-color-floral-white;
+  padding: 30px;
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    .name {
+      color: $LightColor;
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    .desc {
+      color: $neutural-grey-1;
+      text-align: center;
+      font-feature-settings: "liga" off;
+
+      font-size: 11px;
+
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+}

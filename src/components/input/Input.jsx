@@ -7,7 +7,7 @@ function Input(props) {
     setFocused(true);
   };
   return (
-    <div>
+    <div className='input'>
       <label>{label}</label>
       <input
         {...input}

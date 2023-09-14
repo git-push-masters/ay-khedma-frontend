@@ -1,0 +1,127 @@
+@import "../../../styles/varible.scss";
+.footer {
+  width: 100%;
+  padding: calc($padding + 20px);
+  height: fit-content;
+  background: rgb(11, 46, 28);
+  background: linear-gradient(
+    135deg,
+    rgba(11, 46, 28, 1) 75%,
+    rgba(62, 147, 79, 1) 100%
+  );
+
+  .footerContainer {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 24px;
+      background: #4eba64;
+      padding: 30px;
+      .text1,
+      .text2,
+      .input {
+        flex: 1;
+      }
+      .text1 {
+        color: $neutural-white;
+        font-feature-settings: "liga" off;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 32px;
+      }
+      .text2 {
+        color: $neutural-white;
+        font-feature-settings: "liga" off;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+      .inputContainer {
+        display: flex;
+        height: fit-content;
+        padding: 0px 20px;
+        justify-content: center;
+        background-color: $neutural-white;
+        align-items: center;
+        border-radius: 40px;
+
+        .button {
+          button {
+            border-radius: 60px;
+            background: #d2e171;
+            padding: 8px 24px;
+            text-align: center;
+            border: none;
+          }
+        }
+        .input {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          input {
+            border: none;
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      padding: 30px;
+      .right,
+      .left {
+        flex: 1;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        p {
+          color: #fff;
+          width: 60%;
+          font-feature-settings: "liga" off;
+
+          font-size: 12px;
+
+          font-weight: 400;
+          line-height: 18px;
+        }
+        .icons {
+          display: flex;
+          gap: 20px;
+        }
+      }
+      .left {
+        display: flex;
+        justify-content: space-evenly;
+        color: $neutural-white;
+        .ul {
+          h3 {
+            color: $neutural-white;
+            font-feature-settings: "liga" off;
+
+            font-size: 24px;
+
+            font-weight: 700;
+            line-height: 32px;
+          }
+          ul {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            li {
+              color: $neutural-white;
+              font-feature-settings: "liga" off;
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

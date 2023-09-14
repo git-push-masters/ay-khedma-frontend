@@ -1,0 +1,51 @@
+@import "../../../styles/varible.scss";
+.sliderWork {
+  width: 80%;
+  position: relative;
+  border-radius: 72px;
+  background: #f8f8f8;
+  height: 300px;
+  padding: 30px;
+  .slick-list,
+  .slick-slider,
+  .slick-track {
+    height: 400px;
+    /* overflow: visible; */
+  }
+  .arrows {
+    position: absolute;
+    top: 40%;
+    background-color: $LightColor;
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    border: bone;
+    color: $neutural-white;
+    &.back {
+      left: -60px;
+    }
+    &.forward {
+      right: -60px;
+    }
+  }
+}
+
+.center {
+  .slick-center {
+    .slideWork {
+      transform: scale(1.5);
+      transition: all 400ms ease-in-out;
+    }
+  }
+}
+// .center .slick-center .slideWork {
+//   transform: scale(1.2);
+//   transition: all 400ms ease-in-out;
+// }
+.center .slick-center .slideWork .icon {
+  background-color: #4eba64;
+}

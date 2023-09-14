@@ -1,0 +1,48 @@
+@import "../../styles/varible.scss";
+.navbar {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $whiteColor;
+  background-color: transparent;
+  z-index: 333;
+  .navbarLeft {
+    .navbarLogo {
+      width: 163px;
+      height: 57px;
+    }
+  }
+  .navbarMidle {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      li {
+        margin: 0px 35px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .navbarright {
+    span {
+      cursor: pointer;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

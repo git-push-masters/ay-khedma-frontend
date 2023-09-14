@@ -1,0 +1,40 @@
+@import "../../../styles/varible.scss";
+.rightCardConatiner {
+  padding: calc($padding + 30px);
+  width: 515px;
+  height: fit-content;
+  border-radius: 72px;
+  background: #f8f8f8;
+  margin-bottom: 30px;
+  h1 {
+    color: #4caf50;
+    font-feature-settings: "liga" off;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+  .credit {
+    margin-bottom: 20px;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    padding: 0px 70px;
+
+    justify-content: space-between;
+    .key,
+    .value {
+      font-feature-settings: "liga" off;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    .key {
+      color: $neutural-black;
+    }
+    .value {
+      color: #838383;
+      justify-self: flex-start;
+    }
+  }
+}

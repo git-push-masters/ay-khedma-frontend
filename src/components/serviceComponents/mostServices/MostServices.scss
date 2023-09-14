@@ -1,0 +1,52 @@
+@import "../../../styles/varible.scss";
+.mostServicesCard {
+  width: 305px;
+  height: 366px;
+  border-radius: 41px;
+  background-image: none;
+  background-color: $main-color-floral-white;
+
+  padding: 30px;
+  &.active {
+    background: linear-gradient(205deg, #4eba64 31.09%, #d2e171 110.66%);
+    img {
+    }
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .img {
+      width: 80px;
+      filter: brightness(0) saturate(100%) invert(7%) sepia(11%) saturate(2180%)
+        hue-rotate(167deg) brightness(93%) contrast(93%);
+      &.active {
+        filter: brightness(0) saturate(100%) invert(33%) sepia(26%)
+          saturate(409%) hue-rotate(191deg) brightness(96%) contrast(88%);
+      }
+    }
+  }
+  .texts {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: $darkerColor;
+    &.active {
+      color: $neutural-grey-1;
+    }
+    h2 {
+      font-feature-settings: "liga" off;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    p {
+      font-feature-settings: "liga" off;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

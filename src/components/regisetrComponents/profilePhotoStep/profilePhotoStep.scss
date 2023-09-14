@@ -1,0 +1,51 @@
+@import "../../../styles/varible.scss";
+.profilePhotoStep {
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  .iconContainer {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    .icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-color: rgba(78, 186, 100, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .texts {
+    margin-bottom: 20px;
+    h3 {
+      font-size: 16px;
+      color: #111;
+      text-align: center;
+    }
+    p {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  .buttonLocation {
+    display: flex;
+    width: 100%;
+    height: 49px;
+    padding: 17px 100px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 10px;
+    border-radius: 13px;
+    background: $LightColor;
+    margin-top: 15px;
+    color: $whiteColor;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}

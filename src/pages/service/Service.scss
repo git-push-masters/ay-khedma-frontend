@@ -1,0 +1,105 @@
+@import "../../styles/varible.scss";
+.serviceContainer {
+  width: 100%;
+  background-image: url("../../assests/logoShape.svg");
+  background-position: center;
+  background-size: 14000px;
+  .navbarConatiner {
+    height: 200px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background: linear-gradient(243deg, #4eba64 31.72%, #d2e171 113.03%);
+    .title {
+      margin-right: 140px;
+      margin-top: 30px;
+      width: 351px;
+      height: 38px;
+      color: #fff;
+      font-feature-settings: "liga" off;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+  .mostUse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc($padding + 20px);
+    width: 80%;
+    margin: 0px auto;
+    h1 {
+      color: $neutural-black;
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 32px;
+      span {
+        color: $LightColor;
+      }
+    }
+    .mostUseContainer {
+      padding: 20px calc($padding + 50px);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+      gap: 30px;
+    }
+  }
+  .allWorker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc($padding + 20px);
+    width: 80%;
+    margin: 0px auto;
+    h1 {
+      color: $neutural-black;
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 32px;
+      span {
+        color: $LightColor;
+      }
+    }
+    .allWorkerContainer {
+      padding: 20px calc($padding + 50px);
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 30px;
+    }
+  }
+  .requestWorks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calc($padding + 20px);
+    width: 80%;
+    margin: 0px auto;
+
+    h1 {
+      color: $neutural-black;
+      text-align: center;
+      font-feature-settings: "liga" off;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 32px;
+      span {
+        color: $LightColor;
+      }
+    }
+    .requestWorkContainer {
+      padding: 20px calc($padding + 50px);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

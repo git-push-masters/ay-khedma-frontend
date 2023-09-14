@@ -1,0 +1,102 @@
+@import "../../styles/varible.scss";
+.profileConyainer {
+  background-image: url("../../assests/logoShape.svg");
+  background-position: center;
+  background-size: 4000px;
+
+  .navbarConatiner {
+    height: 200px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    background: linear-gradient(243deg, #4eba64 31.72%, #d2e171 113.03%);
+    .title {
+      margin-right: 140px;
+      margin-top: 30px;
+      width: 351px;
+      height: 38px;
+      color: #fff;
+      font-feature-settings: "liga" off;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+  .contentContainer {
+    display: flex;
+    .right,
+    .left {
+      flex: 1;
+      padding: 30px;
+    }
+    .right {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+
+      .accountCard {
+        height: fit-content;
+        width: 363px;
+        padding: 50px;
+        border-radius: 72px;
+        background: #f8f8f8;
+        .who {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          h1 {
+            color: #4caf50;
+            text-align: center;
+            font-feature-settings: "liga" off;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 32px;
+          }
+          p {
+            color: $neutural-grey-1;
+            text-align: center;
+            font-feature-settings: "liga" off;
+            font-family: Plus Jakarta Sans;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px; /* 150% */
+          }
+        }
+        .connectionDetails {
+          .item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            p {
+              color: $neutural-grey-1;
+
+              font-feature-settings: "liga" off;
+
+              font-size: 12px;
+
+              font-weight: 400;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+      .profileBtn {
+        margin-top: 30px;
+        border: 1px solid;
+        width: 360px;
+        height: 101px;
+        border-radius: 38px;
+        &.btn1 {
+          background: $LightColor;
+          color: $neutural-white;
+        }
+        &.btn2 {
+          color: $LightColor;
+          background: $neutural-white;
+        }
+      }
+    }
+  }
+}

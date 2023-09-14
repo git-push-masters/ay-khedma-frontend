@@ -1,0 +1,28 @@
+@import "../sliderWork/SliderWork.scss";
+.slideWork {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 140px;
+  height: 80%;
+  padding: 50px 10px;
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 20px;
+  }
+  h2 {
+    color: #171921;
+    margin-top: 30px;
+    text-align: center;
+    font-feature-settings: "liga" off;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    width: 100%;
+  }
+}
