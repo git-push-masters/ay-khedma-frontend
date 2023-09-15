@@ -9,13 +9,18 @@
   gap: 20px;
   .mostPopularWorkerRight {
     flex: 3;
-    height: 100%;
+    height: 300px;
     padding: 30px;
     border-radius: 72px;
     background-color: $whiteColor;
     display: flex;
     gap: 20px;
-
+    .rightMostPopularWorkerRight {
+      img {
+        // width: fit-content;
+        height: 220px;
+      }
+    }
     .leftMostPopularWorkerRight {
       display: flex;
       flex-direction: column;

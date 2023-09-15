@@ -15,9 +15,11 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userLoading = useSelector((state) => state.user.isFitching);
-
   const userIsError = useSelector((state) => state.user.isError);
   const userError = useSelector((state) => state.user.error);
+  const userredux = useSelector((state) => state.user.currentUser);
+  const token = userredux?.token;
+  token && window.localStorage.setItem("token", token);
   const [user, setUser] = useState({
     phone: "",
     password: "",
@@ -44,14 +46,14 @@ function Login() {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-  const userredux = useSelector((state) => state.user.currentUser);
+
   console.log(userredux);
   const handleSubmit = async (e) => {
     e.preventDefault();
     login(dispatch, user);
   };
   if (userredux) {
-    return navigate("/home");
+    return navigate("/");
   }
 
   return (

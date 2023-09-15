@@ -5,7 +5,6 @@ import { MultiStepContext } from "../../../authstatemang/StepContext";
 import { register } from "../../../rtk/apiCalls";
 import CircularProgress from "@mui/joy/CircularProgress";
 import FlashMessage from "react-flash-message";
-import axiosInstsnce from "../../../configs/axiosInstanse";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const SmsCode = () => {
@@ -16,6 +15,8 @@ const SmsCode = () => {
   const userIsError = useSelector((state) => state.user.isError);
   const userError = useSelector((state) => state.user.error);
   const currentUser = useSelector((state) => state.user.currentUser);
+  const token = currentUser?.token;
+  window.localStorage.setItem("token", token);
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [activeOtpIndex, setActiveOtpIndex] = useState(0);
   const inputRef = useRef();
@@ -61,7 +62,7 @@ const SmsCode = () => {
     // register(dispatch, user);
   };
   if (currentUser) {
-    return navigate("/home");
+    return navigate("/");
   }
   return (
     <div className='smsCode'>

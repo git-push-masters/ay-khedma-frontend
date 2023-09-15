@@ -32,8 +32,10 @@
 // export let persistorIeee = persistStore(store);
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import userSlice from "../slices/userSlice";
+import sectionSlice from "../slices/sectionSlice";
 export const store = configureStore({
   reducer: {
     user: userSlice,
+    section: sectionSlice,
   },
 });

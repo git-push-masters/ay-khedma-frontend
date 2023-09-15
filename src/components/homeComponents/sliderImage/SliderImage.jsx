@@ -7,7 +7,6 @@ import img3 from "../../../assests/imgs/Group 143.png";
 let slides = [
   <img src={img2} alt='3' />,
   <img src={img1} alt='2' />,
-
   <img src={img3} alt='4' />,
 ];
 const callback = function (index) {

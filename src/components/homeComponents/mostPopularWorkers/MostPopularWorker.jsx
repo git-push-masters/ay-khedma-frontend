@@ -5,27 +5,28 @@ import star from "../../../assests/star.svg";
 import location from "../../../assests/locationProfile.svg";
 import mail from "../../../assests/mailProfile (2).svg";
 import contact from "../../../assests/phoneProfile.svg";
-const MostPopularWorker = () => {
+import axiosInstsnce from "../../../configs/axiosInstanse";
+const MostPopularWorker = ({ email, name, address, phone, imgUrl }) => {
   return (
     <div className='mostPopularWorker'>
       <div className='mostPopularWorkerRight'>
         <div className='rightMostPopularWorkerRight'>
-          <img src={Unkown} alt='' />
+          <img
+            src={imgUrl ? `${axiosInstsnce.getUri() + imgUrl}` : Unkown}
+            alt=''
+          />
         </div>
         <div className='leftMostPopularWorkerRight'>
           <div className='texts'>
-            <h2 className='name'>سيف سويلم</h2>
+            <h2 className='name'>{name ? name : "لا يوجد اسم"} </h2>
             <p className='desc'>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است.
+              {address
+                ? address
+                : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است."}{" "}
             </p>
           </div>
           <div className='rating'>
-            <img src={star} alt='' />
-            <img src={star} alt='' />
-            <img src={star} alt='' />
-            <img src={star} alt='' />
-            <img src={star} alt='' />
+            {Array(5).fill(<img src={star} alt='' />)}
           </div>
         </div>
       </div>
@@ -33,17 +34,17 @@ const MostPopularWorker = () => {
         <h1 className='title'>تفاصيل</h1>
         <div className='item'>
           <img src={mail} alt='' />
-          <p>seif3264@gmail.com</p>
+          <p>{email ? email : "لا يوجد"}</p>
         </div>
         <div className='item'>
           <img src={contact} alt='' />
-          <p>+20 1256 1324 6</p>
+          <p>{phone ? phone : "لا يوجد"}</p>
         </div>
         <div className='item'>
           <img src={location} alt='' />
-          <p>الدقهلية , ميت غمر عمارة 6 , شقة 14</p>
+          <p> {address ? address : "لا يوجد"}</p>
         </div>
-        <button className='btn'>تواصل</button>
+        <button className='btn'>عرض حسابه</button>
       </div>
     </div>
   );

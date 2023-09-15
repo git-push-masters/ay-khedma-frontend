@@ -12,15 +12,16 @@ const UserRegisterInfo = () => {
   const [inputsTarget, setInputTarget] = useState({
     name: "",
     phone: "",
-    email: "",
+    email: "@gmail.com",
     password: "",
   });
-  const [idPhoto, setIdPhoto] = useState({});
+  const [idPhoto, setIdPhoto] = useState();
   const [selected, setSelected] = useState("acceptor");
   const [identity, setIdentity] = useState();
   const { setUserData, setCurrentStep } = useContext(MultiStepContext);
 
   const user = { ...inputsTarget, identity };
+  console.log(user);
   const inputs = [
     {
       id: 1,
@@ -52,7 +53,7 @@ const UserRegisterInfo = () => {
       // errorMessage: "يجب أن يكون عنوان بريد إلكتروني صالحًا!",
       label: "الإيميل",
       //   pattern: "",
-      // required: true,
+      required: true,
     },
     {
       id: 5,
@@ -66,6 +67,7 @@ const UserRegisterInfo = () => {
       required: true,
     },
   ];
+
   const handleChange = (e) => {
     setInputTarget({ ...inputsTarget, [e.target.name]: e.target.value });
   };
@@ -86,10 +88,12 @@ const UserRegisterInfo = () => {
     }
   };
   useEffect(() => {
-    const upload = async () => {
-      await uploadPhoto();
-    };
-    upload();
+    if (idPhoto) {
+      const upload = async () => {
+        await uploadPhoto();
+      };
+      upload();
+    }
   }, [idPhoto]);
   const handleClick = async (e) => {
     e.preventDefault();
@@ -109,7 +113,7 @@ const UserRegisterInfo = () => {
       {inputs.map((input) => (
         <Input
           key={input.id}
-          value={inputs[input.name]}
+          value={inputsTarget[input.name]}
           onChange={handleChange}
           {...input}
         />

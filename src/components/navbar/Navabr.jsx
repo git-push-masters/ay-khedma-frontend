@@ -5,20 +5,38 @@ import Logo from "../../assests/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../rtk/slices/userSlice";
+import AddRequest from "../addRequest/AddRequest";
+import SpechialButton from "../specialButton/SpechialButton";
 const Navbar = ({ color, logoprop }) => {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.currentUser);
+  const userToken = localStorage.getItem("token");
+  console.log(typeof userToken);
+  console.log(userToken);
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(logOut());
-    navigate("/");
+    localStorage.removeItem("token");
+    navigate("/landing");
   };
+
+  const handleRequest = () => {
+    setOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
   return (
     <div className='container'>
       <div className=' navbar' style={{ color: color }}>
         <div className='navbarright'>
-          {user ? (
-            <span onClick={handleLogOut}>تسجيل الخروج</span>
+          {userToken ? (
+            <div style={{ display: "flex", gap: "20px" }}>
+              <span onClick={handleLogOut}>تسجيل الخروج</span>
+              <SpechialButton
+                onclick={handleRequest}
+                text={"   طلب خدمه جديده"}
+              />
+            </div>
           ) : (
             <span>
               <Link style={{ color: color }} to='/login'>
@@ -30,7 +48,7 @@ const Navbar = ({ color, logoprop }) => {
         <div className='navbarMidle'>
           <ul>
             <li>
-              <Link style={{ color: color }} to='/home'>
+              <Link style={{ color: color }} to='/'>
                 الرئيسية
               </Link>
             </li>
@@ -39,6 +57,7 @@ const Navbar = ({ color, logoprop }) => {
                 الخدمات
               </Link>
             </li>
+
             <li>
               <Link style={{ color: color }} to='/profile'>
                 حسابي
@@ -50,6 +69,7 @@ const Navbar = ({ color, logoprop }) => {
           <img className='navbarLogo' src={logoprop ? logoprop : Logo} alt='' />
         </div>
       </div>
+      {open && <AddRequest setOpen={setOpen} />}
     </div>
   );
 };

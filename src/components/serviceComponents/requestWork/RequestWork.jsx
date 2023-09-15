@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "../requestWork/RequestWork.scss";
 import Replace from "../../../assests/imgs/Rectangle 58.png";
 import location from "../../../assests/location.svg";
-const RequestWork = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
+import { useNavigate } from "react-router-dom";
+
+const RequestWork = ({ id, title, address, description }) => {
+  const navigate = useNavigate();
   return (
     <div className='requestWork'>
       <div className='rightRequestWork'>
@@ -20,7 +19,7 @@ const RequestWork = () => {
       <div className='leftRequestWork'>
         <div className='TopLeftRequestWork'>
           <div className='rightTopLeftRequestWork'>
-            <h1>تصليح حنفية مكسورة من الداخل</h1>
+            <h1>{title ? title : "تصليح حنفية مكسورة من الداخل"}</h1>
             <p className='date'>18/10/2023</p>
           </div>
           <div className='leftTopLeftRequestWork'>100ج</div>
@@ -29,16 +28,24 @@ const RequestWork = () => {
           <div className='icon'>
             <img src={location} alt='' />
             <p className='address'>
-              الدقهلية , ميت غمر , شارع الجيش عمارة 6 , شقة 14
+              {address
+                ? address
+                : "الدقهلية , ميت غمر , شارع الجيش عمارة 6 , شقة 14"}
             </p>
           </div>
           <div className='desc'>
-            لوريم أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو تيمبور ينسشمع لش
-            مع يمن بخس
+            {description
+              ? description
+              : " لوريم أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو تيمبور ينسشمع لش  مع يمن بخس"}
           </div>
         </div>
         <div className='bottomLeftRequestWork'>
-          <button className='btn right'>تفاصيل أكثر</button>
+          <button
+            onClick={() => navigate(`/request/${id}`)}
+            className='btn right'
+          >
+            تفاصيل أكثر
+          </button>
           <button className='btn left'>تواصل</button>
         </div>
       </div>
