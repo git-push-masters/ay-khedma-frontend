@@ -10,19 +10,22 @@ import { persistorIeee, store } from "./rtk/store/store";
 import StepContext from "./authstatemang/StepContext.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistorIeee}> */}
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={store}>
+        {/* <PersistGate loading={null} persistor={persistorIeee}> */}
+
         <StepContext>
           <App />
         </StepContext>
-      </BrowserRouter>
-      {/* </PersistGate> */}
-    </Provider>
+
+        {/* </PersistGate> */}
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

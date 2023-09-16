@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./addRequest.scss";
 import axiosInstsnce from "../../configs/axiosInstanse";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 const AddRequest = ({ setOpen }) => {
   const [sections, setSections] = useState([]);
@@ -13,10 +15,19 @@ const AddRequest = ({ setOpen }) => {
   const [maxPrice, setMaxPrice] = useState("");
   const [durationRange, setDurationRange] = useState("");
   const [thumbnails, setThumbnails] = useState([]);
-  const [thumbnailPhoto, setThumbnailPhoto] = useState({});
+  const [currentLocation, setCurrentLocation] = useState();
+  const [thumbnailPhoto, setThumbnailPhoto] = useState([]);
+  const [res, setRes] = useState();
   const userRedux = useSelector((state) => state.user.currentUser);
-  const locationLat = userRedux.locationLat;
-  const locationLong = userRedux.locationLong;
+  const geoLocationJs = () => {
+    navigator.geolocation.getCurrentPosition((postion) => {
+      const { latitude, longitude } = postion.coords;
+      setCurrentLocation({ locationLat: latitude, locationLong: longitude });
+    });
+  };
+  // console.log(userRedux);
+  // const locationLat = userRedux?.locationLat;
+  // const locationLong = userRedux?.locationLong;
   const request = {
     sectionId,
     title,
@@ -26,23 +37,27 @@ const AddRequest = ({ setOpen }) => {
     maxPrice,
     durationRange,
     thumbnails,
-    locationLat,
-    locationLong,
+    ...currentLocation,
   };
-  const uploadPhoto = async (file) => {
+  const uploadPhoto = async () => {
     const formData = new FormData();
-    formData.append("thumbnail", file);
+    Array.from(thumbnailPhoto).forEach((file) => {
+      formData.append("thumbnail", file);
+    });
+    // formData.append("thumbnail", thumbnailPhoto);
     try {
       const res = await axiosInstsnce.post("/thumbnails", formData);
       const url = res.data.url;
       console.log(url);
-      return Promise.resolve(url);
+      setThumbnails(url);
+      toast.success(`تم الرفع بنجاح  `);
+      geoLocationJs();
     } catch (e) {
-      console.log(e);
-      return Promise.reject("Error uploading img");
+      console.log();
+      toast.error(e.response.data.msgs[0]);
     }
   };
-
+  console.log(thumbnails);
   const getSections = async () => {
     try {
       const res = await axiosInstsnce.get("/sections");
@@ -52,31 +67,33 @@ const AddRequest = ({ setOpen }) => {
       console.log(e);
     }
   };
-  console.log(thumbnailPhoto);
 
   useEffect(() => {
     getSections();
-    // uploadPhoto();
-  }, []);
+    if (thumbnailPhoto.length) {
+      uploadPhoto();
+    }
+  }, [thumbnailPhoto]);
 
   const sendRequest = async (e) => {
     e.preventDefault();
     try {
-      // if (thumbnailPhoto?.files?.length > 0) {
-      //   await thumbnailPhoto.files.forEach(async (file) => {
-      //     const uri = await uploadPhoto(file);
-      //     setThumbnails((curr) => [...curr, uri]);
-      //   });
-      // }
-
       await uploadPhoto();
       const res = await axiosInstsnce.post("requests", request);
+      setRes(res);
+      toast.success(`تم انشاء الطلب بنجاح `);
       console.log(res.data);
     } catch (e) {
       console.log(e);
+      toast.error(e.response.data.msgs[0]);
     }
   };
-
+  console.log(thumbnails);
+  if (res) {
+    setOpen(false);
+    document.body.style.overflow = "auto";
+  }
+  console.log(request);
   return (
     <div className='addRequest'>
       <div className='addRequestContainer'>
@@ -186,6 +203,7 @@ const AddRequest = ({ setOpen }) => {
             </button>
           </div>
         </form>
+        <ToastContainer position='top-right' />
       </div>
     </div>
   );

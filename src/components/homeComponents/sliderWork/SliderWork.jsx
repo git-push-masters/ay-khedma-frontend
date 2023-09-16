@@ -24,7 +24,6 @@ const SliderWork = () => {
     const getSections = async () => {
       try {
         const res = await axiosInstsnce.get("/sections");
-        console.log(res.data);
         setSections(res.data.body);
       } catch (e) {}
     };

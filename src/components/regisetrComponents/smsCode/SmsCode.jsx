@@ -8,7 +8,7 @@ import FlashMessage from "react-flash-message";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const SmsCode = () => {
-  const { userData } = useContext(MultiStepContext);
+  const { userData, setCurrentStep } = useContext(MultiStepContext);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userLoading = useSelector((state) => state.user.isFitching);
@@ -62,6 +62,7 @@ const SmsCode = () => {
     // register(dispatch, user);
   };
   if (currentUser) {
+    setCurrentStep(1);
     return navigate("/");
   }
   return (

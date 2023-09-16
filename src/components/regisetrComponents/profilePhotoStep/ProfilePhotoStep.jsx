@@ -3,7 +3,6 @@ import "./profilePhotoStep.scss";
 import Profile from "../../../assests/profile.svg";
 import SpechialButton from "../../specialButton/SpechialButton";
 import { MultiStepContext } from "../../../authstatemang/StepContext";
-import axios from "axios";
 import axiosInstsnce from "../../../configs/axiosInstanse";
 const ProfilePhotoStep = () => {
   const [profilePhoto, setProfilePhoto] = useState(false);
@@ -14,7 +13,6 @@ const ProfilePhotoStep = () => {
   const uploadPhoto = async () => {
     const formData = new FormData();
     formData.append("avatar", profilePhoto[0]);
-
     try {
       const res = await axiosInstsnce.post("/avatars", formData);
       const url = res.data.url;
@@ -25,10 +23,12 @@ const ProfilePhotoStep = () => {
     }
   };
   useEffect(() => {
-    const upload = async () => {
-      await uploadPhoto();
-    };
-    upload();
+    if (profilePhoto) {
+      const upload = async () => {
+        await uploadPhoto();
+      };
+      upload();
+    }
   }, [profilePhoto]);
   const user = { ...userData, avatar };
   const handleClick = () => {

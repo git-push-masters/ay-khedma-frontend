@@ -11,8 +11,6 @@ const Navbar = ({ color, logoprop }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const userToken = localStorage.getItem("token");
-  console.log(typeof userToken);
-  console.log(userToken);
   const dispatch = useDispatch();
   const handleLogOut = () => {
     dispatch(logOut());

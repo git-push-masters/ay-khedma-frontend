@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./requestDetails.scss";
 import Navbar from "../../components/navbar/Navabr";
-import { Carousel } from "3d-react-carousal";
+// import { Carousel } from "3d-react-carousal";
 import MostPopularWorker from "../../components/homeComponents/mostPopularWorkers/MostPopularWorker";
 import ReplaceImg from "../../assests/imgs/Rectangle 106.png";
 import { useLocation } from "react-router-dom";
@@ -12,7 +12,7 @@ let slides = [
   <img src={img ? img : ReplaceImg} alt='' />,
   <img src={img ? img : ReplaceImg} alt='' />,
 ];
-const callback = function (index) {};
+
 const RequestDetails = () => {
   const requestId = useLocation().pathname.split("/")[2];
   const [request, setRequest] = useState();
@@ -38,13 +38,12 @@ const RequestDetails = () => {
       <div className='requestDetailsContainer'>
         <div className='requsetDetailsSlider'>
           <div style={{ direction: "ltr" }} className='slider'>
-            <Carousel
+            {/* <Carousel
               slides={slides}
               autoplay={true}
               interval={2000}
-              onSlideChange={callback}
               arrows={false}
-            />
+            /> */}
           </div>
           <div className='sliderTexts'>
             <h1> {request ? request.title : "لا يوجد"}</h1>

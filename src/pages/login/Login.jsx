@@ -47,7 +47,6 @@ function Login() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  console.log(userredux);
   const handleSubmit = async (e) => {
     e.preventDefault();
     login(dispatch, user);

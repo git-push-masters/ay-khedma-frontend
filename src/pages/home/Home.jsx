@@ -20,9 +20,8 @@ function Home() {
   const getUsers = async () => {
     try {
       const res = await axiosInstsnce.get("/users", {
-        params: { sectionId, limit: 3 },
+        params: { sectionId, limit: 10 },
       });
-      console.log(res.data.body);
       setUsers(res.data.body);
     } catch (e) {
       console.log(e);
@@ -31,7 +30,7 @@ function Home() {
   const getRequests = async () => {
     try {
       const res = await axiosInstsnce.get("/requests", {
-        params: { sectionId, limit: 3 },
+        params: { sectionId, limit: 10 },
       });
       setRequests(res.data.body);
     } catch (e) {
@@ -43,6 +42,7 @@ function Home() {
     getUsers();
     getRequests();
   }, [sectionId]);
+  console.log(requests);
   return (
     <div className='home'>
       <Navbar logoprop={Logo} color='black' />
@@ -100,6 +100,7 @@ function Home() {
               address={request.address}
               description={request.description}
               id={request.id}
+              imgUrl={request.thumbnails[0]}
             />
           ))}
         </div>

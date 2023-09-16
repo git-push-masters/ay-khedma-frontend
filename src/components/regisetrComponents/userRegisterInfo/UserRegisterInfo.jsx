@@ -21,7 +21,6 @@ const UserRegisterInfo = () => {
   const { setUserData, setCurrentStep } = useContext(MultiStepContext);
 
   const user = { ...inputsTarget, identity };
-  console.log(user);
   const inputs = [
     {
       id: 1,

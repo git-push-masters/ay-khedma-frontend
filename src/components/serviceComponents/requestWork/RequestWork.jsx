@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "../requestWork/RequestWork.scss";
 import Replace from "../../../assests/imgs/Rectangle 58.png";
 import location from "../../../assests/location.svg";
 import { useNavigate } from "react-router-dom";
+import axiosInstsnce from "../../../configs/axiosInstanse";
 
-const RequestWork = ({ id, title, address, description }) => {
+const RequestWork = ({ id, title, address, description, imgUrl }) => {
   const navigate = useNavigate();
   return (
     <div className='requestWork'>
       <div className='rightRequestWork'>
         <div className='img'>
-          <img src={Replace} alt='' />
+          <img
+            src={imgUrl ? `${axiosInstsnce.getUri() + imgUrl}` : Replace}
+            alt=''
+          />
         </div>
         <div className='text'>
           <span> 3أشخاص</span> مقدمين للخدمة
