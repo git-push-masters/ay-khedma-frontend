@@ -1,9 +1,14 @@
 .sliderImageConatiner {
+  width: 100%;
   margin-top: 50px;
-  margin-bottom: 10px;
-  max-width: 80%;
+  margin-bottom: -30px;
+  height: 80vh;
   direction: ltr !important;
-  img {
-    max-width: 100%;
+  .react-3d-carousel
+    .slider-container
+    .slider-content
+    .slider-single
+    .slider-single-content {
+    box-shadow: none;
   }
 }
