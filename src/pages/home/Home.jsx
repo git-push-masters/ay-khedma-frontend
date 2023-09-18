@@ -20,7 +20,7 @@ function Home() {
   const getUsers = async () => {
     try {
       const res = await axiosInstsnce.get("/users", {
-        params: { sectionId, limit: 10 },
+        params: { sectionId, limit: 5 },
       });
       setUsers(res.data.body);
     } catch (e) {
@@ -30,7 +30,7 @@ function Home() {
   const getRequests = async () => {
     try {
       const res = await axiosInstsnce.get("/requests", {
-        params: { sectionId, limit: 10 },
+        params: { sectionId, limit: 5 },
       });
       setRequests(res.data.body);
     } catch (e) {

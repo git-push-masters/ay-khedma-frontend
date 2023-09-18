@@ -50,7 +50,9 @@ const AddRequest = ({ setOpen }) => {
       const url = res.data.url;
       console.log(url);
       setThumbnails(url);
-      toast.success(`تم الرفع بنجاح  `);
+      if (url) {
+        toast.success(`تم الرفع بنجاح `);
+      }
       geoLocationJs();
     } catch (e) {
       console.log();
@@ -67,7 +69,6 @@ const AddRequest = ({ setOpen }) => {
       console.log(e);
     }
   };
-
   useEffect(() => {
     getSections();
     if (thumbnailPhoto.length) {
@@ -78,7 +79,6 @@ const AddRequest = ({ setOpen }) => {
   const sendRequest = async (e) => {
     e.preventDefault();
     try {
-      await uploadPhoto();
       const res = await axiosInstsnce.post("requests", request);
       setRes(res);
       toast.success(`تم انشاء الطلب بنجاح `);
